@@ -1,0 +1,28 @@
+All Home Work Study Other 91 Leisure Shopping Commute Move
+Home 1 2 12
+Work 11 12 13 43 81
+Study Primary_school College High_school University 21
+Primary_school 22 26
+College 23 27
+High_school 24 28
+University 25 29
+Other 41 42
+Leisure 51 52 53 54 82
+Shopping Small_shopping Shopping_mall 30
+Small_shopping 33 34
+Shopping_mall 31 32 35
+Commute To_X To_a_mode
+To_X Go_with Pick_up
+Go_with 61 63
+Pick_up 62 64
+To_a_mode Drop_off Collect
+Drop_off 71 73
+Collect 72 74
+Move Smooth Motorized Public Other_mode
+Smooth 100 110 111 112 193 194 195
+Motorized Motorbike Car
+Motorbike 113 114 115 116
+Car 121 122 161 171 181 182
+Public Urban_pts 151
+Urban_pts 131 133 138 139 141 142
+Other_mode 191 192 196
