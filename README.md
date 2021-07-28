@@ -24,7 +24,7 @@ Beta -> 0 <=> Hamming distance
 ### Sim function
 ------------
 
-The $im:Σ x Σ -> [0,1] function defined the similarity between all symbols in the alphabet of sequences Σ. 
+The sim:Σ x Σ -> [0,1] function defined the similarity between all symbols in the alphabet of sequences Σ. 
 
 Basicaly, we can use the trival distance function. 
 
