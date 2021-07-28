@@ -25,8 +25,10 @@ Beta -> 0 <=> Hamming distance
 ------------
 
 The $im:Σ x Σ -> [0,1] function defined the similarity between all symbols in the alphabet of sequences Σ. 
+
 Basicaly, we can use the trival distance function. 
-The Wu-Palmer similarity function used a knowledge graph (i.e., ontology) for symbol comparison. An example of graph structure is given in the file "ontology_sac.txt". 
+
+The Wu-Palmer similarity function used a knowledge graph (i.e., ontology) for symbol comparison. An example of graph structure is given in the file "ontology_emd.txt". 
 
 
 ### Interval_step
