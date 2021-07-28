@@ -31,7 +31,7 @@ Basicaly, we can use the trival distance function.
 The Wu-Palmer similarity function used a knowledge graph (i.e., ontology) for symbol comparison. An example of graph structure is given in the file "ontology_emd.txt". 
 
 
-### Interval_step
+### Interval_step variable
 ------------
 
 Granularity of the time interval I according to the defined unit of time. 
