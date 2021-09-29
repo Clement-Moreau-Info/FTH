@@ -16,31 +16,6 @@ interval_step = 5
 
 ######################
 
-##
-# Extraction of all semantic-temporal sequences from a file .csv
-# path : path of the file
-# sep  : separator
-# id   : id sequence colonne
-##
-def extract_temp_seq(path: str, sep=";", id="id") -> List[Temporal_seq]:
-    df = pd.read_csv(path, sep=sep)
-    max_seq = max(df[id]) + 1
-
-    # Activity seq
-    seq_act = [[str(x) for x in df[df[id] == i].iloc[:, 1].values.tolist()]
-                for i in range(1, max_seq)]
-    # Temporal seq
-    seq_temp = [[t for t in df[df[id] == i].iloc[:, 2].values.tolist()]
-                for i in range(1, max_seq)]
-
-    T_max = np.sum(seq_temp[0])
-    
-    # Verify if for all seq_temp, sum(seq_temp) = T_max
-    for i in range(max_seq - 1):
-        if np.sum(seq_temp[i]) != T_max:
-            raise NameError("Séquences ", i, " de longueur différente")
-
-    return [Temporal_seq(seq_act[i], seq_temp[i]) for i in range(max_seq - 1)]
 
 ##
 # Fuzzy context function 
