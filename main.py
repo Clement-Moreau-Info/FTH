@@ -20,6 +20,33 @@ def sim(x: str, y: str) -> float:
     return wu_palmer(x, y, path_onto)
 
 
+##
+# Extraction of all semantic-temporal sequences from a file .csv
+# path : path of the file
+# sep  : separator
+# id   : id sequence colonne
+##
+def extract_temp_seq(path: str, sep=";", id="id") -> List[Temporal_seq]:
+    df = pd.read_csv(path, sep=sep)
+    max_seq = max(df[id]) + 1
+
+    # Activity seq
+    seq_act = [[str(x) for x in df[df[id] == i].iloc[:, 1].values.tolist()]
+                for i in range(1, max_seq)]
+    # Temporal seq
+    seq_temp = [[t for t in df[df[id] == i].iloc[:, 2].values.tolist()]
+                for i in range(1, max_seq)]
+
+    T_max = np.sum(seq_temp[0])
+    
+    # Verify if for all seq_temp, sum(seq_temp) = T_max
+    for i in range(max_seq - 1):
+        if np.sum(seq_temp[i]) != T_max:
+            raise NameError("Séquences ", i, " de longueur différente")
+
+    return [Temporal_seq(seq_act[i], seq_temp[i]) for i in range(max_seq - 1)]
+
+
 if __name__ == '__main__':
     S_alice = Temporal_seq(['1', '133', '100', '11', '100', '51', '131', '12', '1'],
                            [210, 20, 10, 250, 15, 60, 15, 290, 570])
