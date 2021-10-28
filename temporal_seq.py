@@ -1,6 +1,9 @@
-from typing import List
+from typing import List, TypeVar
 
-class Temporal_seq:
-    def __init__(self, acts: List[str], times: List[float]) -> None:
+T = TypeVar('T')
+
+
+class TemporalSeq:
+    def __init__(self, acts: List[T], times: List[float]) -> None:
         self.acts = acts
         self.times = times
