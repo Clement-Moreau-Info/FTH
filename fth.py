@@ -69,7 +69,7 @@ def cost_delta(e: Edit, sim: Callable[[T, T], float], beta: float) -> float:
 # beta  : Boundary in min
 # f     : Cost function (choose `cost_delta` or `cost_gamma`
 ##
-def one_sided_fth(seq1: Temporal_seq, seq2: Temporal_seq, sim: Callable[[T, T], float], beta: float, f=cost_delta) -> float:
+def one_sided_fth(seq1: TemporalSeq, seq2: TemporalSeq, sim: Callable[[T, T], float], beta: float, f=cost_delta) -> float:
     sum_cost = 0
     for i in prange(len(seq1.acts)):
         e = Edit(seq1.acts[i], seq1.times[i], np.sum(seq1.times[:i]), seq2)
@@ -84,6 +84,6 @@ def one_sided_fth(seq1: Temporal_seq, seq2: Temporal_seq, sim: Callable[[T, T], 
 # beta  : Boundary in min
 # f     : Cost function (choose `cost_delta` or `cost_gamma`
 ##
-def fth(seq1: Temporal_seq, seq2: Temporal_seq, sim: Callable[[T, T], float], beta: float, f=cost_delta) -> float:
+def fth(seq1: TemporalSeq, seq2: TemporalSeq, sim: Callable[[T, T], float], beta: float, f=cost_delta) -> float:
     return max(one_sided_fth(seq1, seq2, sim, beta, f),
                one_sided_fth(seq2, seq1, sim, beta, f))
