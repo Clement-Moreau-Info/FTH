@@ -3,7 +3,7 @@ The Fuzzy temporal Hamming distance
 
 From the paper : 
 
-* A Fuzzy Generalisation of the Hamming Distance for Temporal Sequences
+* [A Fuzzy Generalisation of the Hamming Distance for Temporal Sequences](https://ieeexplore.ieee.org/document/9494445)
 > C Moreau, T Devogele, C de Runz, V Peralta, E Moreau, L Etienne
 > Fuzz-IEEE, 2021
 
@@ -34,7 +34,7 @@ The Wu-Palmer similarity function used a knowledge graph (i.e., ontology) for sy
 ### Interval_step variable
 ------------
 
-Granularity of the time interval I according to the defined unit of time. 
+Granularity of the time interval I according to the defined unit of time. By default 5 minutes
 
 
 
